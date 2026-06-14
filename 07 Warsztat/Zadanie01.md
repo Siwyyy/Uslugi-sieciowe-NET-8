@@ -55,7 +55,7 @@ public interface IRepository<T> where T : class
 }
 ```
 Implementacja EF Core Repository
-```
+```csharp
 public class EfCoreRepository<T> : IRepository<T> where T : class
 {
     private readonly DbContext _context;
@@ -182,7 +182,7 @@ public class PostsController : ControllerBase
 ### Krok 6: Konfiguracja Dependency Injection i Bazy Danych
 
 W tym kroku skonfigurujesz Dependency Injection (DI) w Twojej aplikacji .NET 6, aby umożliwić łatwe wstrzykiwanie zależności, takich jak `IRepository<Post>` i Twoje konkretne repozytorium `PostRepository`. Ponadto, ustawisz połączenie z bazą danych.
-```
+```csharp
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<BlogDbContext>(options =>
